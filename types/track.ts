@@ -1,5 +1,5 @@
 import { Artist, SimplifiedTrack } from "./types.ts";
-import { ExternalIdObj, TrackObj } from "../structures/structs.ts";
+import { ExternalIdObj, TrackObj, SimplifiedAlbumObj } from "../structures/structs.ts";
 
 export class Track extends SimplifiedTrack {
   #data: TrackObj;
@@ -24,5 +24,9 @@ export class Track extends SimplifiedTrack {
 
   get popularity(): number {
     return this.#data.popularity;
+  }
+
+  get album(): SimplifiedAlbumObj {
+    return this.#data.album;
   }
 }
